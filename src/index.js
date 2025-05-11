@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap/dist/js/bootstrap.bundle"
+// ✅ CORRECT
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+
 
 import reportWebVitals from './reportWebVitals';
 

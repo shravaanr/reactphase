@@ -7,6 +7,11 @@ import { Container, Row,Col } from 'react-bootstrap';
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { blog } from './Data/blog';
+// ✅ CORRECT
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearchengin, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
 
 function App() {
   // let name="shravan"
@@ -22,6 +27,7 @@ phonenummber:'6363',
 email:'email.com'
   }
   return (
+   
 //     <div className="App">
 //   <h1>{name}</h1>
 //   {(status)?
@@ -29,11 +35,12 @@ email:'email.com'
 // :"it is false"}
 //   </div>
 <div className="main">hello
+  <FontAwesomeIcon icon={faSearchengin}/>
   <Test myname={myname}>
     <h1>fuck this worldd off</h1>
   </Test>
 <Header headerinfo={headerinfo} cname="shrvan"/> 
-<Container fluid>
+{/* <Container fluid>
 <Container>
  
   <Row>
@@ -91,6 +98,16 @@ email:'email.com'
     </Col>
    </Row>
 </Container>
+</Container> */}
+<Container>
+  <Row>
+    {blog.map((v,i)=>{
+      return(
+<ProductItems pitems={v} key={i}/>
+      )
+    })}
+
+  </Row>
 </Container>
 <h1>hello world</h1>
 <About name="shravan"/>
@@ -113,3 +130,20 @@ export default App;
 //     <div className='carditem'>hello world</div>
 //   )
 // }
+
+function ProductItems({pitems,key}){
+  return(
+   <div className="col-lg-3 mb-4">
+ <Card >
+      <Card.Body>
+        <Card.Title>{pitems.title}</Card.Title>
+        <Card.Text>
+         {pitems.body}
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+   </div>
+  )
+
+}
