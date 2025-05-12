@@ -11,11 +11,21 @@ import { blog } from './Data/blog';
 // ✅ CORRECT
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearchengin, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import Practice from './Practice';
 
 
 function App() {
   // let name="shravan"
   // let status=true
+
+
+let testName={
+  name:"shravan",
+  class:"ramakunja"
+}
+
+
+
 
 let myname={
   name:"shravan",
@@ -118,6 +128,8 @@ email:'email.com'
 <Card/>
 
 </div> */}
+<Practice practicename={testName} lastname="shravan"/>
+
 </div>
 );
 }
@@ -140,7 +152,7 @@ function ProductItems({pitems,key}){
         <Card.Text>
          {pitems.body}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Go somewhere{pitems.id}</Button>
       </Card.Body>
     </Card>
    </div>
